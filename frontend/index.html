@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inferno AI - Spatio-Temporal Wildfire Optimizer</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container">
+        <!-- Sidebar Dashboard -->
+        <aside id="sidebar" class="glass-panel">
+            <div class="header">
+                <h1>Inferno AI</h1>
+                <p>Spatio-Temporal Predictor</p>
+            </div>
+            
+            <div class="control-group">
+                <h3>Temporal Simulation (Hours)</h3>
+                <div class="slider-container">
+                    <span id="hours-display">0h</span>
+                    <input type="range" id="time-slider" min="0" max="12" value="0" step="1">
+                </div>
+                <p class="helper-text">Predicts spread trajectory based on MODIS/VIIRS mocks, wind, and terrain.</p>
+            </div>
+
+            <div class="control-group">
+                <h3>Resource Optimizer</h3>
+                <div class="resource-inputs">
+                    <div class="input-col">
+                        <label>Air Tankers</label>
+                        <input type="number" id="input-tankers" value="10" min="0">
+                    </div>
+                    <div class="input-col">
+                        <label>Ground Crews</label>
+                        <input type="number" id="input-crews" value="50" min="0">
+                    </div>
+                </div>
+                <button id="btn-optimize" class="btn-primary">Calculate Optimal Deployment</button>
+            </div>
+
+            <div class="stats-panel">
+                <h3>Active Deployment Map</h3>
+                <div id="allocations-list">
+                    <p class="muted">Run optimization to see resource deployment targets.</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Map Container -->
+        <main id="map-area">
+            <div id="map"></div>
+            <!-- Loading overlay -->
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Processing Spatio-temporal Data...</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="app.js"></script>
+</body>
+</html>
