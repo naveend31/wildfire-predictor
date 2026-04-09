@@ -49,4 +49,4 @@ Developed a Big Data model that integrates real-time satellite imagery (MODIS/VI
    ```
 
 5. **Interact**
-   Open your browser and navigate to `http://localhost:8000` to view the Spatio-Temporal Interface.
+   Open your browser and navigate to the local link: **[http://localhost:8000](http://localhost:8000)** to view the Spatio-Temporal Interface.
